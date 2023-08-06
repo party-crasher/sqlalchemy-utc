@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sqlalchemy-utc"
+version = "0.15.0"
+description = "SQLAlchemy type to store aware datetime values"
+authors = ["synth3tk <dev@synth3.tk>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "sqlalchemy_utc"}]
+
+[tool.poetry.dependencies]
+python = "^3.4"
+SQLAlchemy = ">=0.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

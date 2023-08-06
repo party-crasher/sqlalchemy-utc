@@ -22,6 +22,11 @@ def default_sql_utcnow(element, compiler, **kw):
     return 'CURRENT_TIMESTAMP'
 
 
+@compiles(utcnow, 'postgresql')
+def pg_sql_utcnow(element, compiler, **kw):
+    return "TIMEZONE('utc', CURRENT_TIMESTAMP)"
+
+
 @compiles(utcnow, 'mysql')
 def mysql_sql_utcnow(element, compiler, **kw):
     """MySQL returns now as localtime, so we convert to UTC.
